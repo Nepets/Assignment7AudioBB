@@ -66,8 +66,8 @@ class SelectionFragment : Fragment() {
                 override fun onItemClick(position: Int) {
                     model.mangaTitle(mangaData.get(position).title)
                     model.mangaAuthor(mangaData.get(position).author)
-
-                    if (activity!!.resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT){
+                    val d=activity!!.resources.displayMetrics.densityDpi
+                    if (activity!!.resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT && d !=320){
                     parentFragmentManager.beginTransaction()
                         .replace(R.id.FragContainer1,displayFragment)
                         .addToBackStack(null)

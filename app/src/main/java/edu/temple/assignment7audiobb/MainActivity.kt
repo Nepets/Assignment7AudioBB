@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
         for(i in mangaAuthors.indices){
             blist.add(Book(mangaNames[i],mangaAuthors[i]))
         }
-
-        Log.d("myTag", blist.get(0).toString())
+        val d=this.resources.displayMetrics.densityDpi
+        Log.d("myTag", d.toString())
         if (savedInstanceState == null)
             supportFragmentManager.beginTransaction()
                 .replace(R.id.FragContainer1, SelectionFragment.newInstance(mangaNames,mangaAuthors))
